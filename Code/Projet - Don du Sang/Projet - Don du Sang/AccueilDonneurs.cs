@@ -16,5 +16,23 @@ namespace Projet___Don_du_Sang
         {
             InitializeComponent();
         }
+
+        private void btnInscription_Click(object sender, EventArgs e)
+        {
+            Inscription inscription = new Inscription();
+            inscription.Show();
+        }
+
+        private void btnConnexion_Click(object sender, EventArgs e)
+        {
+            Connexion connexion = new Connexion();
+            connexion.Show();
+        }
+
+        private void btnRetour_Click(object sender, EventArgs e)
+        {
+            Accueil accueil = new Accueil();
+            accueil.Show();
+        }
     }
 }

@@ -34,6 +34,7 @@
             btnValiderConnexion = new Button();
             texboxEmail = new TextBox();
             texboxMotDePasse = new TextBox();
+            btnRetour = new Button();
             SuspendLayout();
             // 
             // labNomConnexion
@@ -71,6 +72,7 @@
             btnValiderConnexion.TabIndex = 3;
             btnValiderConnexion.Text = "Connexion";
             btnValiderConnexion.UseVisualStyleBackColor = true;
+            btnValiderConnexion.Click += btnValiderConnexion_Click;
             // 
             // texboxEmail
             // 
@@ -86,11 +88,22 @@
             texboxMotDePasse.Size = new Size(277, 39);
             texboxMotDePasse.TabIndex = 5;
             // 
+            // btnRetour
+            // 
+            btnRetour.Location = new Point(1, 3);
+            btnRetour.Name = "btnRetour";
+            btnRetour.Size = new Size(150, 46);
+            btnRetour.TabIndex = 6;
+            btnRetour.Text = "Retour";
+            btnRetour.UseVisualStyleBackColor = true;
+            btnRetour.Click += btnRetour_Click;
+            // 
             // Connexion
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(575, 298);
+            Controls.Add(btnRetour);
             Controls.Add(texboxMotDePasse);
             Controls.Add(texboxEmail);
             Controls.Add(btnValiderConnexion);
@@ -111,5 +124,6 @@
         private Button btnValiderConnexion;
         private TextBox texboxEmail;
         private TextBox texboxMotDePasse;
+        private Button btnRetour;
     }
 }

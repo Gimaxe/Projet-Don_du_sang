@@ -141,12 +141,13 @@
             // 
             // BtnRetourMenu
             // 
-            BtnRetourMenu.Location = new Point(12, 2);
+            BtnRetourMenu.Location = new Point(2, 2);
             BtnRetourMenu.Name = "BtnRetourMenu";
             BtnRetourMenu.Size = new Size(150, 46);
             BtnRetourMenu.TabIndex = 10;
             BtnRetourMenu.Text = "Retour";
             BtnRetourMenu.UseVisualStyleBackColor = true;
+            BtnRetourMenu.Click += BtnRetourMenu_Click;
             // 
             // Questionaires
             // 

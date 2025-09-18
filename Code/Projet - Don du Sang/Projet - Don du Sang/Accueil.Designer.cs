@@ -50,6 +50,7 @@
             btnDonneur.TabIndex = 1;
             btnDonneur.Text = "Donneurs";
             btnDonneur.UseVisualStyleBackColor = true;
+            btnDonneur.Click += btnDonneur_Click;
             // 
             // labDonDuSang
             // 
@@ -60,7 +61,7 @@
             labDonDuSang.TabIndex = 2;
             labDonDuSang.Text = "Accueil - Don du sang";
             // 
-            // Form1
+            // Accueil
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -68,7 +69,7 @@
             Controls.Add(labDonDuSang);
             Controls.Add(btnDonneur);
             Controls.Add(btnMedecin);
-            Name = "Form1";
+            Name = "Accueil";
             Text = "Form1";
             ResumeLayout(false);
             PerformLayout();

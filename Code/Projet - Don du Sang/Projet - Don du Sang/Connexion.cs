@@ -16,5 +16,17 @@ namespace Projet___Don_du_Sang
         {
             InitializeComponent();
         }
+
+        private void btnValiderConnexion_Click(object sender, EventArgs e)
+        {
+            Questionaires questionaires = new Questionaires();
+            questionaires.Show();
+        }
+
+        private void btnRetour_Click(object sender, EventArgs e)
+        {
+            AccueilDonneurs accueilDonneurs = new AccueilDonneurs();
+            accueilDonneurs.Show();
+        }
     }
 }

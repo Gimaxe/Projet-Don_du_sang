@@ -40,6 +40,7 @@
             labDateNaissance = new Label();
             labMotDePasse = new Label();
             labNomInscription = new Label();
+            btnRetour = new Button();
             SuspendLayout();
             // 
             // btnValiderInscription
@@ -140,11 +141,22 @@
             labNomInscription.TabIndex = 11;
             labNomInscription.Text = "Inscription";
             // 
+            // btnRetour
+            // 
+            btnRetour.Location = new Point(-2, 3);
+            btnRetour.Name = "btnRetour";
+            btnRetour.Size = new Size(150, 46);
+            btnRetour.TabIndex = 12;
+            btnRetour.Text = "Retour";
+            btnRetour.UseVisualStyleBackColor = true;
+            btnRetour.Click += btnRetour_Click;
+            // 
             // Inscription
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(693, 454);
+            Controls.Add(btnRetour);
             Controls.Add(labNomInscription);
             Controls.Add(labMotDePasse);
             Controls.Add(labDateNaissance);
@@ -177,5 +189,6 @@
         private Label labDateNaissance;
         private Label labMotDePasse;
         private Label labNomInscription;
+        private Button btnRetour;
     }
 }

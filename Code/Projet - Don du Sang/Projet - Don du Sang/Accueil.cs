@@ -6,5 +6,11 @@ namespace Projet___Don_du_Sang
         {
             InitializeComponent();
         }
+
+        private void btnDonneur_Click(object sender, EventArgs e)
+        {
+            AccueilDonneurs accueilDonneurs = new AccueilDonneurs();
+            accueilDonneurs.Show();
+        }
     }
 }

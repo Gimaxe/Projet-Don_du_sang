@@ -30,31 +30,45 @@
         {
             btnConnexion = new Button();
             btnInscription = new Button();
+            btnRetour = new Button();
             SuspendLayout();
             // 
             // btnConnexion
             // 
-            btnConnexion.Location = new Point(75, 51);
+            btnConnexion.Location = new Point(75, 84);
             btnConnexion.Name = "btnConnexion";
             btnConnexion.Size = new Size(150, 46);
             btnConnexion.TabIndex = 0;
             btnConnexion.Text = "Connexion";
             btnConnexion.UseVisualStyleBackColor = true;
+            btnConnexion.Click += btnConnexion_Click;
             // 
             // btnInscription
             // 
-            btnInscription.Location = new Point(289, 51);
+            btnInscription.Location = new Point(289, 84);
             btnInscription.Name = "btnInscription";
             btnInscription.Size = new Size(150, 46);
             btnInscription.TabIndex = 1;
             btnInscription.Text = "Inscription";
             btnInscription.UseVisualStyleBackColor = true;
+            btnInscription.Click += btnInscription_Click;
+            // 
+            // btnRetour
+            // 
+            btnRetour.Location = new Point(1, 3);
+            btnRetour.Name = "btnRetour";
+            btnRetour.Size = new Size(150, 46);
+            btnRetour.TabIndex = 2;
+            btnRetour.Text = "Retour";
+            btnRetour.UseVisualStyleBackColor = true;
+            btnRetour.Click += btnRetour_Click;
             // 
             // AccueilDonneurs
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(564, 148);
+            ClientSize = new Size(564, 185);
+            Controls.Add(btnRetour);
             Controls.Add(btnInscription);
             Controls.Add(btnConnexion);
             Name = "AccueilDonneurs";
@@ -66,5 +80,6 @@
 
         private Button btnConnexion;
         private Button btnInscription;
+        private Button btnRetour;
     }
 }
