@@ -15,7 +15,8 @@ namespace Projet___Don_du_Sang
 
         private void btnMedecin_Click(object sender, EventArgs e)
         {
-
+            ConnexionMedecin connexionMedecin = new ConnexionMedecin();
+            connexionMedecin.Show();
         }
     }
 }
