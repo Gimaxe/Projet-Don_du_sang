@@ -35,7 +35,7 @@
             LblQuestion = new Label();
             btnQuestionSuivante = new Button();
             btnQuestionPrecedente = new Button();
-            textBox1 = new TextBox();
+            TxtPrecision = new TextBox();
             labPreciser = new Label();
             GbResponses = new GroupBox();
             radiobtnNon = new RadioButton();
@@ -79,7 +79,7 @@
             GBReponsesDonneurs.Controls.Add(LblQuestion);
             GBReponsesDonneurs.Controls.Add(btnQuestionSuivante);
             GBReponsesDonneurs.Controls.Add(btnQuestionPrecedente);
-            GBReponsesDonneurs.Controls.Add(textBox1);
+            GBReponsesDonneurs.Controls.Add(TxtPrecision);
             GBReponsesDonneurs.Controls.Add(labPreciser);
             GBReponsesDonneurs.Controls.Add(GbResponses);
             GBReponsesDonneurs.Location = new Point(298, 29);
@@ -119,13 +119,13 @@
             btnQuestionPrecedente.Text = "Question précedente";
             btnQuestionPrecedente.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // TxtPrecision
             // 
-            textBox1.Location = new Point(275, 114);
-            textBox1.Margin = new Padding(2);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(338, 25);
-            textBox1.TabIndex = 13;
+            TxtPrecision.Location = new Point(275, 114);
+            TxtPrecision.Margin = new Padding(2);
+            TxtPrecision.Name = "TxtPrecision";
+            TxtPrecision.Size = new Size(338, 25);
+            TxtPrecision.TabIndex = 13;
             // 
             // labPreciser
             // 
@@ -213,7 +213,7 @@
         private GroupBox GBReponsesDonneurs;
         private Button btnQuestionSuivante;
         private Button btnQuestionPrecedente;
-        private TextBox textBox1;
+        private TextBox TxtPrecision;
         private Label labPreciser;
         private GroupBox GbResponses;
         private RadioButton radiobtnNon;

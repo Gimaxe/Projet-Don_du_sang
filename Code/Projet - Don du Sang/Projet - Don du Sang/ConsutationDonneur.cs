@@ -31,6 +31,7 @@ namespace Projet___Don_du_Sang
         private int idxQuestionActuelle = 1;
         private void AfficherQuestion()
         {
+            TxtPrecision.Clear();
             using DonDuSangRomainMathisContext db = new DonDuSangRomainMathisContext();
 
             Question question = db.Questions.SingleOrDefault(o => o.IdQuestion == idxQuestionActuelle);
@@ -39,6 +40,7 @@ namespace Projet___Don_du_Sang
             Donneur donneur = (Donneur)LstDonneur.SelectedItem;
             Reponse reponse = db.Reponses.SingleOrDefault(o => o.IdDonneur == donneur.IdDonneur && o.IdQuestion == idxQuestionActuelle);
             int nombreTotalDeQuestions = db.Questions.Count();
+
             if (reponse.Reponse1 == null)
             {
                 radiobtnOui.Checked = true;
@@ -52,10 +54,11 @@ namespace Projet___Don_du_Sang
                 radiobtnNon.Checked = true;
             }
 
-            if (idxQuestionActuelle > nombreTotalDeQuestions)
+            if (reponse.PrecisionPourMedecin != null)
             {
-                MessageBox.Show("Fin du questionnaire");
+                TxtPrecision.Text = reponse.PrecisionPourMedecin.ToString();
             }
+
         }
 
 
@@ -66,7 +69,9 @@ namespace Projet___Don_du_Sang
 
         private void LstDonneur_DoubleClick(object sender, EventArgs e)
         {
+            
             AfficherQuestion();
+
         }
 
         private void btnQuestionSuivante_Click(object sender, EventArgs e)
