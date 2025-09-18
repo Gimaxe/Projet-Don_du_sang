@@ -56,6 +56,18 @@ namespace Projet___Don_du_Sang
         private void btnQuestionSuivante_Click(object sender, EventArgs e)
         {
             using DonDuSangRomainMathisContext db = new DonDuSangRomainMathisContext();
+            List<Reponse> verifierReponse = db.Reponses.Where(o => o.IdDonneur == Connexion.DonneurConnecte.IdDonneur).ToList();
+            foreach (List<Reponse> VeriRep in verifierReponse)
+            {
+                if (VeriRep != null)
+                {
+                    db.Reponses.RemoveRange(verifierReponse);
+
+                    db.SaveChanges();
+                }
+            }
+
+
             Reponse reponse = new Reponse();
             //reponse.PrecisionPourMedecin 
 
