@@ -51,6 +51,7 @@
             btnValiderInscription.TabIndex = 0;
             btnValiderInscription.Text = "Inscription";
             btnValiderInscription.UseVisualStyleBackColor = true;
+            btnValiderInscription.Click += btnValiderInscription_Click;
             // 
             // textBox1
             // 
