@@ -11,14 +11,14 @@
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+        //protected override void Dispose(bool disposing)
+        //{
+        //    if (disposing && (components != null))
+        //    {
+        //        components.Dispose();
+        //    }
+        //    base.Dispose(disposing);
+        //}
 
         #region Windows Form Designer generated code
 
@@ -40,7 +40,7 @@
             btnQuestionSuivante = new Button();
             BtnRetourMenu = new Button();
             groupBox1.SuspendLayout();
-            SuspendLayout();
+            //SuspendLayout();
             // 
             // labNumeroQuestion
             // 
@@ -72,7 +72,7 @@
             radiobtnOui.TabStop = true;
             radiobtnOui.Text = "Oui";
             radiobtnOui.UseVisualStyleBackColor = true;
-            radiobtnOui.CheckedChanged += radiobtnOui_CheckedChanged;
+            //radiobtnOui.CheckedChanged += radiobtnOui_CheckedChanged;
             // 
             // radiobtnNon
             // 
@@ -85,7 +85,7 @@
             radiobtnNon.TabStop = true;
             radiobtnNon.Text = "Non";
             radiobtnNon.UseVisualStyleBackColor = true;
-            radiobtnNon.CheckedChanged += radiobtnNon_CheckedChanged;
+            //radiobtnNon.CheckedChanged += radiobtnNon_CheckedChanged;
             // 
             // radiobtnJeNeSaisPas
             // 
@@ -98,7 +98,7 @@
             radiobtnJeNeSaisPas.TabStop = true;
             radiobtnJeNeSaisPas.Text = "Je ne sais pas";
             radiobtnJeNeSaisPas.UseVisualStyleBackColor = true;
-            radiobtnJeNeSaisPas.CheckedChanged += radiobtnJeNeSaisPas_CheckedChanged;
+            //radiobtnJeNeSaisPas.CheckedChanged += radiobtnJeNeSaisPas_CheckedChanged;
             // 
             // groupBox1
             // 
@@ -153,7 +153,7 @@
             btnQuestionSuivante.TabIndex = 9;
             btnQuestionSuivante.Text = "Question suivante";
             btnQuestionSuivante.UseVisualStyleBackColor = true;
-            btnQuestionSuivante.Click += btnQuestionSuivante_Click;
+            //btnQuestionSuivante.Click += btnQuestionSuivante_Click;
             // 
             // BtnRetourMenu
             // 
@@ -164,28 +164,28 @@
             BtnRetourMenu.TabIndex = 10;
             BtnRetourMenu.Text = "Retour";
             BtnRetourMenu.UseVisualStyleBackColor = true;
-            BtnRetourMenu.Click += BtnRetourMenu_Click;
+            //BtnRetourMenu.Click += BtnRetourMenu_Click;
             // 
             // Questionaires
             // 
-            AutoScaleDimensions = new SizeF(7F, 17F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(867, 262);
-            Controls.Add(BtnRetourMenu);
-            Controls.Add(btnQuestionSuivante);
-            Controls.Add(btnQuestionPrecedente);
-            Controls.Add(textboxPreciser);
-            Controls.Add(labPreciser);
-            Controls.Add(groupBox1);
-            Controls.Add(labQuestionPosee);
-            Controls.Add(labNumeroQuestion);
-            Margin = new Padding(2);
-            Name = "Questionaires";
-            Text = "Questionaires";
+            //AutoScaleDimensions = new SizeF(7F, 17F);
+            //AutoScaleMode = AutoScaleMode.Font;
+            //ClientSize = new Size(867, 262);
+            //Controls.Add(BtnRetourMenu);
+            //Controls.Add(btnQuestionSuivante);
+            //Controls.Add(btnQuestionPrecedente);
+            //Controls.Add(textboxPreciser);
+            //Controls.Add(labPreciser);
+            //Controls.Add(groupBox1);
+            //Controls.Add(labQuestionPosee);
+            //Controls.Add(labNumeroQuestion);
+            //Margin = new Padding(2);
+            //Name = "Questionaires";
+            //Text = "Questionaires";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            ResumeLayout(false);
-            PerformLayout();
+            //ResumeLayout(false);
+            //PerformLayout();
         }
 
         #endregion

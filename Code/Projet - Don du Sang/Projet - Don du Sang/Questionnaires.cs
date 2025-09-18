@@ -19,6 +19,8 @@ namespace Projet___Don_du_Sang
 
         private int indexQuestionActuelle = 1;
 
+        private bool? resultatQuestion = null;
+
         public Questionnaires()
         {
             SuppimerReponseDejaEnregistrer();
@@ -79,6 +81,7 @@ namespace Projet___Don_du_Sang
             using DonDuSangRomainMathisContext db = new DonDuSangRomainMathisContext();
             Reponse reponse = new Reponse();
 
+
             bool? reponseChoisie = false;
             if (radiobtnOui.Checked)
             {
@@ -95,6 +98,13 @@ namespace Projet___Don_du_Sang
                 {
                     reponse.PrecisionPourMedecin = null;
                 }
+
+                if (question.EstEliminatoire == true)
+                {
+                    resultatQuestion = true;
+
+                }
+
             }
             else if (radiobtnNon.Checked)
             {
@@ -132,13 +142,28 @@ namespace Projet___Don_du_Sang
             }
             else
             {
-                MessageBox.Show("Questionnaires terminer, Merci !");
+                string TexteResultat = "";
+                switch (resultatQuestion)
+                {
+                    case true:
+                        TexteResultat = "Don faisable";
+                        break;
+
+                    case false:
+                        TexteResultat = "Don impossible";
+                        break;
+
+                    case null:
+                        TexteResultat = "Dépend de l’entretien";
+                        break;     
+                }
+
+                MessageBox.Show("Resultat = " + TexteResultat);
                 Accueil accueil = new Accueil();
                 accueil.Show();
                 this.Hide();
 
             }
-
 
         }
 

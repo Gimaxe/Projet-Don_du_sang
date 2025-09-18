@@ -39,13 +39,15 @@ namespace Projet___Don_du_Sang
                 donneur.MotDePasse = HashPassword.Hash(texboxMotDePasse.Text);
                 db.Donneurs.Add(donneur);
                 db.SaveChanges();
+
                 MessageBox.Show("Inscriprion Réussi !");
-                Close();
+                Connexion connexion = new Connexion();
+                connexion.Show();
+                this.Hide();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erreur :" + ex.Message);
-                Close();
             }
         }
     }
