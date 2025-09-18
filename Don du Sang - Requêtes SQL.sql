@@ -1,51 +1,49 @@
-CREATE TABLE Donneur(
-   Id_Donneur INT IDENTITY,
-   Prenom VARCHAR(50) NOT NULL,
-   Nom VARCHAR(50) NOT NULL,
-   AdresseMail VARCHAR(50) NOT NULL,
-   DateDeNaissance DATE NOT NULL,
-   MotDePasse VARCHAR(100) NOT NULL,
-   EstDAccord VARCHAR(50) NOT NULL,
-   PRIMARY KEY(Id_Donneur)
-);
+--CREATE TABLE Donneur(
+--   Id_Donneur INT IDENTITY,
+--   Prenom VARCHAR(50) NOT NULL,
+--   Nom VARCHAR(50) NOT NULL,
+--   AdresseMail VARCHAR(50) NOT NULL,
+--   DateDeNaissance DATE NOT NULL,
+--   MotDePasse VARCHAR(100) NOT NULL,
+--   EstDAccord VARCHAR(50) NOT NULL,
+--   PRIMARY KEY(Id_Donneur)
+--);
 
-CREATE TABLE Question(
-   Id_Question INT IDENTITY,
-   Numero VARCHAR(50) NOT NULL,
-   Categorie VARCHAR(50) NOT NULL,
-   Enonce VARCHAR(50) NOT NULL,
-   EstEliminatoire BIT,
-   BesoinPrecision BIT,
-   PRIMARY KEY(Id_Question)
-);
+--CREATE TABLE Question(
+--   Id_Question INT IDENTITY,
+--   Numero VARCHAR(50) NOT NULL,
+--   Categorie VARCHAR(50) NOT NULL,
+--   Enonce VARCHAR(50) NOT NULL,
+-- EstEliminatoire BIT,
+--   BesoinPrecision BIT,
+--   PRIMARY KEY(Id_Question)
+--);
 
-CREATE TABLE Reponse(
-   Id_Reponse INT IDENTITY,
-   Reponse BIT NOT NULL,
-   PrecisionPourMedecin VARCHAR(max),
-   Id_Donneur INT NOT NULL,
-   Id_Question INT NOT NULL,
-   PRIMARY KEY(Id_Reponse),
-   FOREIGN KEY(Id_Donneur) REFERENCES Donneur(Id_Donneur),
-   FOREIGN KEY(Id_Question) REFERENCES Question(Id_Question)
-);
+--CREATE TABLE Reponse(
+--   Id_Reponse INT IDENTITY,
+--   Reponse BIT NOT NULL,
+--   PrecisionPourMedecin VARCHAR(max),
+--   Id_Donneur INT NOT NULL,
+--   Id_Question INT NOT NULL,
+--   PRIMARY KEY(Id_Reponse),
+--   FOREIGN KEY(Id_Donneur) REFERENCES Donneur(Id_Donneur),
+--   FOREIGN KEY(Id_Question) REFERENCES Question(Id_Question)
+--);
 
-
-
-INSERT INTO Question (Numero, Categorie, Enonce, EstElimanatoire) VALUES
-('1','État de santé pour pouvoir donner du sang','Vous sentez-vous en forme pour donner votre sang ?', '1'),
-('2A','État de santé pour pouvoir donner du sang','Avez vous consulté un médecin dans les 4 derniers mois ?', '0'),
-('2B','État de santé pour pouvoir donner du sang','Avez vous réalisé des examens de santé (bilan biologique, radiographies…) dans les 4 derniers mois ?', '0'),
-('2C','État de santé pour pouvoir donner du sang','Avez vous Pris (ou prenez-vous actuellement) des médicaments (même à titre préventif) ? Si oui, quand et lesquels ?', '0'),
-('2D','État de santé pour pouvoir donner du sang','Avez vous pris un médicament pour prévenir l’infection à VIH comme la prophylaxie pré-exposition (PrEP) ou la prophylaxie post-exposition (PEP) dans les 4 derniers mois ?', '1'),
-('2E','État de santé pour pouvoir donner du sang','Eu une injection de désensibilisation pour allergie dans les 15 derniers jours ?', '1'),
-('3A','État de santé pour pouvoir donner du sang','Avez-vous été vacciné(e) contre l’hépatite B ?', '0'),
-('3B','État de santé pour pouvoir donner du sang','Avez-vous été vacciné(e) contre d’autres maladies dans le dernier mois ?', '1'),
-('3C','État de santé pour pouvoir donner du sang','Avez-vous été vacciné(e) contre le tétanos dans les 2 dernières années (rappel) ?', '0'),
-('4','État de santé pour pouvoir donner du sang','Avez-vous eu récemment des saignements (du nez, des hémorroïdes, des règles abondantes) ?', '0'),
-('5','État de santé pour pouvoir donner du sang','Avez-vous ressenti dans les jours ou semaines qui précèdent une douleur thoracique ou un essoufflement anormal à la suite d’un effort ?', '1'),
-('6','État de santé pour pouvoir donner du sang','Avez-vous été traité(e) dans les 3 dernières années pour un psoriasis important ?', '1'),
-('7','État de santé pour pouvoir donner du sang','Avez-vous une maladie qui nécessite un suivi médical régulier ?', '1'),
-('8','État de santé pour pouvoir donner du sang','Avez-vous prévu une activité avec efforts physiques (sportive, professionnelle...) juste après votre don ?', '1'),
-('9','État de santé pour pouvoir donner du sang - Au cours de votre vie','Avez-vous déjà consulté un cardiologue ?', '0'),
-('10','État de santé pour pouvoir donner du sang - Au cours de votre vie','Avez-vous déjà été opéré(e) ou hospitalisé(e) ?', '0');
+--INSERT INTO Question (Numero, Categorie, Enonce, EstEliminatoire, BesoinPrecision) VALUES
+--('1','État de santé pour pouvoir donner du sang','Vous sentez-vous en forme pour donner votre sang ?', '1' , '0'),
+--('2A','État de santé pour pouvoir donner du sang','Avez vous consulté un médecin dans les 4 derniers mois ?', '0' ,'0'),
+--('2B','État de santé pour pouvoir donner du sang','Avez vous réalisé des examens de santé (bilan biologique, radiographies…) dans les 4 derniers mois ?', '0','0'),
+--('2C','État de santé pour pouvoir donner du sang','Avez vous Pris (ou prenez-vous actuellement) des médicaments (même à titre préventif) ? Si oui, quand et lesquels ?', '0', '1'),
+--('2D','État de santé pour pouvoir donner du sang','Avez vous pris un médicament pour prévenir l’infection à VIH comme la prophylaxie pré-exposition (PrEP) ou la prophylaxie post-exposition (PEP) dans les 4 derniers mois ?', '1','0'),
+--('2E','État de santé pour pouvoir donner du sang','Eu une injection de désensibilisation pour allergie dans les 15 derniers jours ?', '1','0'),
+--('3A','État de santé pour pouvoir donner du sang','Avez-vous été vacciné(e) contre l’hépatite B ?', '0','0'),
+--('3B','État de santé pour pouvoir donner du sang','Avez-vous été vacciné(e) contre d’autres maladies dans le dernier mois ?', '1','0'),
+--('3C','État de santé pour pouvoir donner du sang','Avez-vous été vacciné(e) contre le tétanos dans les 2 dernières années (rappel) ?', '0','0'),
+--('4','État de santé pour pouvoir donner du sang','Avez-vous eu récemment des saignements (du nez, des hémorroïdes, des règles abondantes) ?', '0','0'),
+--('5','État de santé pour pouvoir donner du sang','Avez-vous ressenti dans les jours ou semaines qui précèdent une douleur thoracique ou un essoufflement anormal à la suite d’un effort ?', '1','0'),
+--('6','État de santé pour pouvoir donner du sang','Avez-vous été traité(e) dans les 3 dernières années pour un psoriasis important ?', '1','0'),
+--('7','État de santé pour pouvoir donner du sang','Avez-vous une maladie qui nécessite un suivi médical régulier ?', '1','1'),
+--('8','État de santé pour pouvoir donner du sang','Avez-vous prévu une activité avec efforts physiques (sportive, professionnelle...) juste après votre don ?', '1','1'),
+--('9','État de santé pour pouvoir donner du sang - Au cours de votre vie','Avez-vous déjà consulté un cardiologue ?', '0','0'),
+--('10','État de santé pour pouvoir donner du sang - Au cours de votre vie','Avez-vous déjà été opéré(e) ou hospitalisé(e) ?', '0','0');
