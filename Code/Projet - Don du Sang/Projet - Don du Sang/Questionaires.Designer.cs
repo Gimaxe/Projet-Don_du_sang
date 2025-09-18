@@ -70,6 +70,7 @@
             radiobtnOui.TabStop = true;
             radiobtnOui.Text = "Oui";
             radiobtnOui.UseVisualStyleBackColor = true;
+            radiobtnOui.CheckedChanged += radiobtnOui_CheckedChanged;
             // 
             // radiobtnNon
             // 
@@ -81,6 +82,7 @@
             radiobtnNon.TabStop = true;
             radiobtnNon.Text = "Non";
             radiobtnNon.UseVisualStyleBackColor = true;
+            radiobtnNon.CheckedChanged += radiobtnNon_CheckedChanged;
             // 
             // radiobtnJeNeSaisPas
             // 
@@ -92,6 +94,7 @@
             radiobtnJeNeSaisPas.TabStop = true;
             radiobtnJeNeSaisPas.Text = "Je ne sais pas";
             radiobtnJeNeSaisPas.UseVisualStyleBackColor = true;
+            radiobtnJeNeSaisPas.CheckedChanged += radiobtnJeNeSaisPas_CheckedChanged;
             // 
             // groupBox1
             // 

@@ -19,24 +19,24 @@ namespace Projet___Don_du_Sang
 
         private void btnInscription_Click(object sender, EventArgs e)
         {
-            this.Hide();
             Inscription inscription = new Inscription();
             inscription.Show();
+            this.Hide();
 
         }
 
         private void btnConnexion_Click(object sender, EventArgs e)
         {
-            this.Hide();
             Connexion connexion = new Connexion();
             connexion.Show();
+            this.Hide();
         }
 
         private void btnRetour_Click(object sender, EventArgs e)
         {
-            this.Hide();
             Accueil accueil = new Accueil();
             accueil.Show();
+            this.Hide();
         }
     }
 }

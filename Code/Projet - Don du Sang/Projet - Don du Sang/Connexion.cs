@@ -28,7 +28,6 @@ namespace Projet___Don_du_Sang
         {
             try
             {
-                this.Hide();
                 using DonDuSangRomainMathisContext db = new DonDuSangRomainMathisContext();
                 Donneur donneur = db.Donneurs.Where(o => o.AdresseMail == texboxEmail.Text && o.MotDePasse == HashPassword.Hash(texboxMotDePasse.Text)).SingleOrDefault();
                 if (donneur != null)
@@ -36,6 +35,7 @@ namespace Projet___Don_du_Sang
                     DonneurConnecte = donneur;
                     Questionaires questionaires = new Questionaires();
                     questionaires.Show();
+                    this.Hide();
                 }
                 else
                 {
@@ -53,7 +53,9 @@ namespace Projet___Don_du_Sang
 
         private void btnRetour_Click(object sender, EventArgs e)
         {
-            Accueil.ActiveForm.Show();
+            AccueilDonneurs accueilDonneurs = new AccueilDonneurs();
+            accueilDonneurs.Show();
+            this.Hide();
         }
     }
 }

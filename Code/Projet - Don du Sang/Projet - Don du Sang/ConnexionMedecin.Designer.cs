@@ -37,29 +37,30 @@
             // 
             // btnRetour
             // 
-            btnRetour.Location = new Point(11, 11);
-            btnRetour.Margin = new Padding(2);
+            btnRetour.Location = new Point(20, 21);
+            btnRetour.Margin = new Padding(4, 4, 4, 4);
             btnRetour.Name = "btnRetour";
-            btnRetour.Size = new Size(81, 24);
+            btnRetour.Size = new Size(150, 45);
             btnRetour.TabIndex = 11;
             btnRetour.Text = "Retour";
             btnRetour.UseVisualStyleBackColor = true;
+            btnRetour.Click += btnRetour_Click;
             // 
             // texboxMotDePasse
             // 
-            texboxMotDePasse.Location = new Point(111, 58);
-            texboxMotDePasse.Margin = new Padding(2);
+            texboxMotDePasse.Location = new Point(206, 109);
+            texboxMotDePasse.Margin = new Padding(4, 4, 4, 4);
             texboxMotDePasse.Name = "texboxMotDePasse";
             texboxMotDePasse.PasswordChar = '*';
-            texboxMotDePasse.Size = new Size(151, 25);
+            texboxMotDePasse.Size = new Size(277, 39);
             texboxMotDePasse.TabIndex = 10;
             // 
             // btnValiderConnexion
             // 
-            btnValiderConnexion.Location = new Point(96, 95);
-            btnValiderConnexion.Margin = new Padding(2);
+            btnValiderConnexion.Location = new Point(178, 179);
+            btnValiderConnexion.Margin = new Padding(4, 4, 4, 4);
             btnValiderConnexion.Name = "btnValiderConnexion";
-            btnValiderConnexion.Size = new Size(81, 24);
+            btnValiderConnexion.Size = new Size(150, 45);
             btnValiderConnexion.TabIndex = 9;
             btnValiderConnexion.Text = "Connexion";
             btnValiderConnexion.UseVisualStyleBackColor = true;
@@ -68,33 +69,34 @@
             // labMotDePasse
             // 
             labMotDePasse.AutoSize = true;
-            labMotDePasse.Location = new Point(11, 61);
-            labMotDePasse.Margin = new Padding(2, 0, 2, 0);
+            labMotDePasse.Location = new Point(20, 115);
+            labMotDePasse.Margin = new Padding(4, 0, 4, 0);
             labMotDePasse.Name = "labMotDePasse";
-            labMotDePasse.Size = new Size(96, 17);
+            labMotDePasse.Size = new Size(170, 32);
             labMotDePasse.TabIndex = 8;
             labMotDePasse.Text = "Mot de passe :";
             // 
             // labNomConnexion
             // 
             labNomConnexion.AutoSize = true;
-            labNomConnexion.Location = new Point(96, 28);
-            labNomConnexion.Margin = new Padding(2, 0, 2, 0);
+            labNomConnexion.Location = new Point(178, 53);
+            labNomConnexion.Margin = new Padding(4, 0, 4, 0);
             labNomConnexion.Name = "labNomConnexion";
-            labNomConnexion.Size = new Size(69, 17);
+            labNomConnexion.Size = new Size(129, 32);
             labNomConnexion.TabIndex = 7;
             labNomConnexion.Text = "Connexion";
             // 
             // ConnexionMedecin
             // 
-            AutoScaleDimensions = new SizeF(7F, 17F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(294, 130);
+            ClientSize = new Size(546, 245);
             Controls.Add(btnRetour);
             Controls.Add(texboxMotDePasse);
             Controls.Add(btnValiderConnexion);
             Controls.Add(labMotDePasse);
             Controls.Add(labNomConnexion);
+            Margin = new Padding(6, 6, 6, 6);
             Name = "ConnexionMedecin";
             Text = "Espace Medecin";
             ResumeLayout(false);

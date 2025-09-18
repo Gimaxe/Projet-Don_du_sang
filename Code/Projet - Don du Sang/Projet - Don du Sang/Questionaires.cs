@@ -11,6 +11,7 @@ using System.Windows.Forms;
 
 namespace Projet___Don_du_Sang
 {
+
     public partial class Questionaires : Form
     {
         private List<Question> listeQuestions;
@@ -20,6 +21,7 @@ namespace Projet___Don_du_Sang
 
         public Questionaires()
         {
+            SuppimerReponseDejaEnregistrer();
             using DonDuSangRomainMathisContext db = new DonDuSangRomainMathisContext();
             int nombreTotalDeQuestions = db.Questions.Count();
             InitializeComponent();
@@ -41,8 +43,11 @@ namespace Projet___Don_du_Sang
 
             labNumeroQuestion.Text = question.Numero.ToString() + " / 15";
             labQuestionPosee.Text = "Question " + question.Numero.ToString() + " - " + question.Enonce.ToString();
+            radiobtnOui.Checked = true;
             if (question.BesoinPrecision == true)
             {
+                textboxPreciser.Text = "";
+
                 labPreciser.Visible = true;
                 textboxPreciser.Visible = true;
             }
@@ -53,27 +58,32 @@ namespace Projet___Don_du_Sang
             }
         }
 
-        private void btnQuestionSuivante_Click(object sender, EventArgs e)
+        private void SuppimerReponseDejaEnregistrer()
         {
             using DonDuSangRomainMathisContext db = new DonDuSangRomainMathisContext();
             List<Reponse> verifierReponse = db.Reponses.Where(o => o.IdDonneur == Connexion.DonneurConnecte.IdDonneur).ToList();
-            foreach (List<Reponse> VeriRep in verifierReponse)
+            foreach (Reponse VeriRep in verifierReponse)
             {
                 if (VeriRep != null)
                 {
-                    db.Reponses.RemoveRange(verifierReponse);
+                    db.Reponses.RemoveRange(VeriRep);
 
                     db.SaveChanges();
                 }
             }
+        }
 
-
+        private void btnQuestionSuivante_Click(object sender, EventArgs e)
+        {
+            using DonDuSangRomainMathisContext db = new DonDuSangRomainMathisContext();
             Reponse reponse = new Reponse();
-            //reponse.PrecisionPourMedecin 
 
             bool? reponseChoisie = false;
             if (radiobtnOui.Checked)
             {
+                labPreciser.Visible = true;
+                textboxPreciser.Visible = true;
+
                 reponseChoisie = true;
                 Question question = db.Questions.SingleOrDefault(o => o.IdQuestion == indexQuestionActuelle);
                 if (question.BesoinPrecision == true)
@@ -82,15 +92,25 @@ namespace Projet___Don_du_Sang
                 }
                 else
                 {
-                    reponse.PrecisionPourMedecin= null;
+                    reponse.PrecisionPourMedecin = null;
                 }
             }
             else if (radiobtnNon.Checked)
             {
+                labPreciser.Visible = false;
+                textboxPreciser.Visible = false;
+
+                textboxPreciser.Text = "";
+
                 reponseChoisie = false;
             }
             else if (radiobtnJeNeSaisPas.Checked)
             {
+                textboxPreciser.Text = "";
+
+                labPreciser.Visible = false;
+                textboxPreciser.Visible = false;
+
                 reponseChoisie = null;
             }
 
@@ -115,6 +135,40 @@ namespace Projet___Don_du_Sang
             }
 
 
+        }
+
+        private void radiobtnOui_CheckedChanged(object sender, EventArgs e)
+        {
+            using DonDuSangRomainMathisContext db = new DonDuSangRomainMathisContext();
+            Question question = db.Questions.SingleOrDefault(o => o.IdQuestion == indexQuestionActuelle);
+            if (question.BesoinPrecision == true)
+            {
+                textboxPreciser.Text = "";
+
+                labPreciser.Visible = true;
+                textboxPreciser.Visible = true;
+            }
+            else
+            {
+                labPreciser.Visible = false;
+                textboxPreciser.Visible = false;
+            }
+        }
+
+        private void radiobtnNon_CheckedChanged(object sender, EventArgs e)
+        {
+            labPreciser.Visible = false;
+            textboxPreciser.Visible = false;
+
+            textboxPreciser.Text = "";
+        }
+
+        private void radiobtnJeNeSaisPas_CheckedChanged(object sender, EventArgs e)
+        {
+            labPreciser.Visible = false;
+            textboxPreciser.Visible = false;
+
+            textboxPreciser.Text = "";
         }
     }
 }
