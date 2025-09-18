@@ -34,7 +34,6 @@
             GBReponsesDonneurs = new GroupBox();
             LblQuestion = new Label();
             btnQuestionSuivante = new Button();
-            btnQuestionPrecedente = new Button();
             TxtPrecision = new TextBox();
             labPreciser = new Label();
             GbResponses = new GroupBox();
@@ -78,7 +77,6 @@
             // 
             GBReponsesDonneurs.Controls.Add(LblQuestion);
             GBReponsesDonneurs.Controls.Add(btnQuestionSuivante);
-            GBReponsesDonneurs.Controls.Add(btnQuestionPrecedente);
             GBReponsesDonneurs.Controls.Add(TxtPrecision);
             GBReponsesDonneurs.Controls.Add(labPreciser);
             GBReponsesDonneurs.Controls.Add(GbResponses);
@@ -91,16 +89,15 @@
             // 
             // LblQuestion
             // 
-            LblQuestion.AutoSize = true;
             LblQuestion.Location = new Point(6, 21);
             LblQuestion.Name = "LblQuestion";
-            LblQuestion.Size = new Size(60, 17);
+            LblQuestion.Size = new Size(794, 43);
             LblQuestion.TabIndex = 16;
             LblQuestion.Text = "Question";
             // 
             // btnQuestionSuivante
             // 
-            btnQuestionSuivante.Location = new Point(430, 150);
+            btnQuestionSuivante.Location = new Point(352, 165);
             btnQuestionSuivante.Margin = new Padding(2);
             btnQuestionSuivante.Name = "btnQuestionSuivante";
             btnQuestionSuivante.Size = new Size(138, 24);
@@ -109,19 +106,9 @@
             btnQuestionSuivante.UseVisualStyleBackColor = true;
             btnQuestionSuivante.Click += btnQuestionSuivante_Click;
             // 
-            // btnQuestionPrecedente
-            // 
-            btnQuestionPrecedente.Location = new Point(260, 150);
-            btnQuestionPrecedente.Margin = new Padding(2);
-            btnQuestionPrecedente.Name = "btnQuestionPrecedente";
-            btnQuestionPrecedente.Size = new Size(138, 24);
-            btnQuestionPrecedente.TabIndex = 14;
-            btnQuestionPrecedente.Text = "Question précedente";
-            btnQuestionPrecedente.UseVisualStyleBackColor = true;
-            // 
             // TxtPrecision
             // 
-            TxtPrecision.Location = new Point(275, 114);
+            TxtPrecision.Location = new Point(275, 129);
             TxtPrecision.Margin = new Padding(2);
             TxtPrecision.Name = "TxtPrecision";
             TxtPrecision.Size = new Size(338, 25);
@@ -130,7 +117,7 @@
             // labPreciser
             // 
             labPreciser.AutoSize = true;
-            labPreciser.Location = new Point(209, 112);
+            labPreciser.Location = new Point(209, 127);
             labPreciser.Margin = new Padding(2, 0, 2, 0);
             labPreciser.Name = "labPreciser";
             labPreciser.Size = new Size(61, 17);
@@ -142,7 +129,7 @@
             GbResponses.Controls.Add(radiobtnNon);
             GbResponses.Controls.Add(radiobtnOui);
             GbResponses.Controls.Add(radiobtnJeNeSaisPas);
-            GbResponses.Location = new Point(268, 44);
+            GbResponses.Location = new Point(268, 59);
             GbResponses.Margin = new Padding(2);
             GbResponses.Name = "GbResponses";
             GbResponses.Padding = new Padding(2);
