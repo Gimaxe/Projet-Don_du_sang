@@ -18,4 +18,9 @@ public partial class Question
     public bool? BesoinPrecision { get; set; }
 
     public virtual ICollection<Reponse> Reponses { get; set; } = new List<Reponse>();
+
+    public override string ToString()
+    {
+        return $"Question {Numero} - {Enonce}";
+    }
 }

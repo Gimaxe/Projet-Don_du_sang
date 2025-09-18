@@ -20,4 +20,9 @@ public partial class Donneur
     public bool? EstDaccord { get; set; }
 
     public virtual ICollection<Reponse> Reponses { get; set; } = new List<Reponse>();
+
+    public override string ToString()
+    {
+        return $"{Nom} {Prenom}";
+    }
 }

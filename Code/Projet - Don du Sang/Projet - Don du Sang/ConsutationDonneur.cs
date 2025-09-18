@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Azure;
+using Microsoft.EntityFrameworkCore;
 using Projet___Don_du_Sang.Models;
 using System;
 using System.Collections.Generic;
@@ -22,7 +23,7 @@ namespace Projet___Don_du_Sang
             foreach (Donneur d in donneur)
             {
                 LstDonneur.Items.Add(d);
-                LstDonneur.DisplayMember = "Nom";
+                LstDonneur.Text = d.ToString();
             }
 
         }
@@ -33,8 +34,30 @@ namespace Projet___Don_du_Sang
             using DonDuSangRomainMathisContext db = new DonDuSangRomainMathisContext();
 
             Question question = db.Questions.SingleOrDefault(o => o.IdQuestion == idxQuestionActuelle);
-            LblQuestion.Text = "Question " + question.Numero.ToString() + " - " + question.Enonce.ToString();
+            LblQuestion.Text = question.ToString();
+            
+            Donneur donneur = (Donneur)LstDonneur.SelectedItem;
+            Reponse reponse = db.Reponses.SingleOrDefault(o => o.IdDonneur == donneur.IdDonneur && o.IdQuestion == idxQuestionActuelle);
+            int nombreTotalDeQuestions = db.Questions.Count();
+            if (reponse.Reponse1 == null)
+            {
+                radiobtnOui.Checked = true;
+            }
+            else if (reponse.Reponse1 == true)
+            {
+                radiobtnJeNeSaisPas.Checked = true;
+            }
+            else
+            {
+                radiobtnNon.Checked = true;
+            }
+
+            if (idxQuestionActuelle > nombreTotalDeQuestions)
+            {
+                MessageBox.Show("Fin du questionnaire");
+            }
         }
+
 
         private void LstDonneur_SelectedIndexChanged(object sender, EventArgs e)
         {
