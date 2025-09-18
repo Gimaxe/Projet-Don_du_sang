@@ -13,6 +13,12 @@ namespace Projet___Don_du_Sang
 {
     public partial class Connexion : Form
     {
+        public static Donneur DonneurConnecte
+        {
+            get; private set;
+        }
+
+
         public Connexion()
         {
             InitializeComponent();
@@ -27,6 +33,7 @@ namespace Projet___Don_du_Sang
                 Donneur donneur = db.Donneurs.Where(o => o.AdresseMail == texboxEmail.Text && o.MotDePasse == HashPassword.Hash(texboxMotDePasse.Text)).SingleOrDefault();
                 if (donneur != null)
                 {
+                    DonneurConnecte = donneur;
                     Questionaires questionaires = new Questionaires();
                     questionaires.Show();
                 }

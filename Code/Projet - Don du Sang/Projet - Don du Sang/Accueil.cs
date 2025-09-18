@@ -12,6 +12,7 @@ namespace Projet___Don_du_Sang
             this.Hide();
             AccueilDonneurs accueilDonneurs = new AccueilDonneurs();
             accueilDonneurs.Show();
+            this.Hide();
         }
 
         private void btnMedecin_Click(object sender, EventArgs e)
