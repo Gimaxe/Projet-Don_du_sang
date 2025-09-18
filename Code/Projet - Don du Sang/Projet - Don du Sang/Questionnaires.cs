@@ -19,7 +19,7 @@ namespace Projet___Don_du_Sang
 
         private int indexQuestionActuelle = 1;
 
-        private bool? resultatQuestion = null;
+        private bool? resultatQuestion = true;
 
         public Questionnaires()
         {
@@ -81,6 +81,8 @@ namespace Projet___Don_du_Sang
             using DonDuSangRomainMathisContext db = new DonDuSangRomainMathisContext();
             Reponse reponse = new Reponse();
 
+            Question question = db.Questions.SingleOrDefault(o => o.IdQuestion == indexQuestionActuelle);
+
 
             bool? reponseChoisie = false;
             if (radiobtnOui.Checked)
@@ -89,7 +91,6 @@ namespace Projet___Don_du_Sang
                 textboxPreciser.Visible = true;
 
                 reponseChoisie = true;
-                Question question = db.Questions.SingleOrDefault(o => o.IdQuestion == indexQuestionActuelle);
                 if (question.BesoinPrecision == true)
                 {
                     reponse.PrecisionPourMedecin = textboxPreciser.Text;
@@ -97,12 +98,6 @@ namespace Projet___Don_du_Sang
                 else
                 {
                     reponse.PrecisionPourMedecin = null;
-                }
-
-                if (question.EstEliminatoire == true)
-                {
-                    resultatQuestion = true;
-
                 }
 
             }
@@ -123,6 +118,7 @@ namespace Projet___Don_du_Sang
                 textboxPreciser.Visible = false;
 
                 reponseChoisie = null;
+
             }
 
             reponse.Reponse1 = reponseChoisie;

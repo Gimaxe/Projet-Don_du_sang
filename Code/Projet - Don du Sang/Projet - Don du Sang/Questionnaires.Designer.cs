@@ -106,7 +106,6 @@
             groupBox1.Size = new Size(585, 113);
             groupBox1.TabIndex = 5;
             groupBox1.TabStop = false;
-            groupBox1.Text = "groupBox1";
             // 
             // textboxPreciser
             // 
@@ -154,7 +153,7 @@
             BtnRetourMenu.UseVisualStyleBackColor = true;
             BtnRetourMenu.Click += BtnRetourMenu_Click;
             // 
-            // Questionaires
+            // Questionnaires
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -167,7 +166,7 @@
             Controls.Add(groupBox1);
             Controls.Add(labQuestionPosee);
             Controls.Add(labNumeroQuestion);
-            Name = "Questionaires";
+            Name = "Questionnaires";
             Text = "Questionaires";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
