@@ -48,8 +48,7 @@ namespace Projet___Don_du_Sang
 
         private void btnRetour_Click(object sender, EventArgs e)
         {
-            AccueilDonneurs accueilDonneurs = new AccueilDonneurs();
-            accueilDonneurs.Show();
+            Accueil.ActiveForm.Show();
         }
     }
 }
