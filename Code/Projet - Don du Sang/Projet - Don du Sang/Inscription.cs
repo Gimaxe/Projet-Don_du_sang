@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using Projet___Don_du_Sang.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,18 +29,22 @@ namespace Projet___Don_du_Sang
         {
             try
             {
-                //using FortBoyardRomainMathisContext db = new FortBoyardRomainMathisContext();
-                //Compte compte = new Compte();
-                //compte.Nom = Txt_Name.Text;
-                //compte.Prenom = Txt_Prenom.Text;
-                //compte.Pseudo = Txt_UserName.Text;
-                //compte.MotDePasse = Txt_Password.Text;
-                //db.Comptes.Add(compte);
-                //db.SaveChanges();
+                using DonDuSangRomainMathisContext db = new DonDuSangRomainMathisContext();
+                Donneur donneur = new Donneur();
+                donneur.Nom = texboxNom.Text;
+                donneur.Prenom = texboxPrenom.Text;
+                donneur.AdresseMail = texboxEmail.Text;
+                donneur.DateDeNaissance = datetimeAnniversaire.Text;
+                donneur.MotDePasse = HashPassword.Hash(texboxMotDePasse.Text);
+                db.Donneurs.Add(donneur);
+                db.SaveChanges();
+                MessageBox.Show("Inscriprion Réussi !");
+                Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erreur :" + ex.Message);
+                Close();
             }
         }
     }

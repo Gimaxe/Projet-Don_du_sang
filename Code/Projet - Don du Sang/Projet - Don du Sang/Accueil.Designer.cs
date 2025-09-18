@@ -41,6 +41,7 @@
             btnMedecin.TabIndex = 0;
             btnMedecin.Text = "Médecins";
             btnMedecin.UseVisualStyleBackColor = true;
+            btnMedecin.Click += btnMedecin_Click;
             // 
             // btnDonneur
             // 

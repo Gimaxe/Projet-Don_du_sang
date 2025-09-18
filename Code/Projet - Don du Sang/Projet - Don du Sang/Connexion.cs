@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Projet___Don_du_Sang.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,8 +20,30 @@ namespace Projet___Don_du_Sang
 
         private void btnValiderConnexion_Click(object sender, EventArgs e)
         {
-            Questionaires questionaires = new Questionaires();
-            questionaires.Show();
+            try
+            {
+                using DonDuSangRomainMathisContext db = new DonDuSangRomainMathisContext();
+                Donneur donneur = db.Donneurs.Where(o => o.AdresseMail == texboxEmail.Text && o.MotDePasse == HashPassword.Hash(texboxMotDePasse.Text)).SingleOrDefault();
+                if (donneur != null)
+                {
+                    Close();
+                    Connexion connexion = new Connexion();
+                    connexion.Close();
+                    Questionaires questionaires = new Questionaires();
+                    questionaires.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Mot de passe non valide");
+                }
+            }
+            catch (Exception ex)
+            {
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            
         }
 
         private void btnRetour_Click(object sender, EventArgs e)

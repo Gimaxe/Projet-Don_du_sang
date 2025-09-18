@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             btnValiderInscription = new Button();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            dateTimePicker1 = new DateTimePicker();
+            texboxNom = new TextBox();
+            texboxPrenom = new TextBox();
+            texboxEmail = new TextBox();
+            texboxMotDePasse = new TextBox();
+            datetimeAnniversaire = new DateTimePicker();
             labNom = new Label();
             labPrenom = new Label();
             labEmail = new Label();
@@ -53,40 +53,40 @@
             btnValiderInscription.UseVisualStyleBackColor = true;
             btnValiderInscription.Click += btnValiderInscription_Click;
             // 
-            // textBox1
+            // texboxNom
             // 
-            textBox1.Location = new Point(140, 109);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(306, 39);
-            textBox1.TabIndex = 1;
+            texboxNom.Location = new Point(140, 109);
+            texboxNom.Name = "texboxNom";
+            texboxNom.Size = new Size(306, 39);
+            texboxNom.TabIndex = 1;
             // 
-            // textBox2
+            // texboxPrenom
             // 
-            textBox2.Location = new Point(170, 154);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(299, 39);
-            textBox2.TabIndex = 2;
+            texboxPrenom.Location = new Point(170, 154);
+            texboxPrenom.Name = "texboxPrenom";
+            texboxPrenom.Size = new Size(299, 39);
+            texboxPrenom.TabIndex = 2;
             // 
-            // textBox3
+            // texboxEmail
             // 
-            textBox3.Location = new Point(154, 199);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(395, 39);
-            textBox3.TabIndex = 3;
+            texboxEmail.Location = new Point(154, 199);
+            texboxEmail.Name = "texboxEmail";
+            texboxEmail.Size = new Size(395, 39);
+            texboxEmail.TabIndex = 3;
             // 
-            // textBox4
+            // texboxMotDePasse
             // 
-            textBox4.Location = new Point(231, 310);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(341, 39);
-            textBox4.TabIndex = 4;
+            texboxMotDePasse.Location = new Point(231, 310);
+            texboxMotDePasse.Name = "texboxMotDePasse";
+            texboxMotDePasse.Size = new Size(341, 39);
+            texboxMotDePasse.TabIndex = 4;
             // 
-            // dateTimePicker1
+            // datetimeAnniversaire
             // 
-            dateTimePicker1.Location = new Point(280, 244);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(400, 39);
-            dateTimePicker1.TabIndex = 5;
+            datetimeAnniversaire.Location = new Point(280, 244);
+            datetimeAnniversaire.Name = "datetimeAnniversaire";
+            datetimeAnniversaire.Size = new Size(400, 39);
+            datetimeAnniversaire.TabIndex = 5;
             // 
             // labNom
             // 
@@ -164,11 +164,11 @@
             Controls.Add(labEmail);
             Controls.Add(labPrenom);
             Controls.Add(labNom);
-            Controls.Add(dateTimePicker1);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(datetimeAnniversaire);
+            Controls.Add(texboxMotDePasse);
+            Controls.Add(texboxEmail);
+            Controls.Add(texboxPrenom);
+            Controls.Add(texboxNom);
             Controls.Add(btnValiderInscription);
             Name = "Inscription";
             Text = "Inscription";
@@ -179,11 +179,11 @@
         #endregion
 
         private Button btnValiderInscription;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private DateTimePicker dateTimePicker1;
+        private TextBox texboxNom;
+        private TextBox texboxPrenom;
+        private TextBox texboxEmail;
+        private TextBox texboxMotDePasse;
+        private DateTimePicker datetimeAnniversaire;
         private Label labNom;
         private Label labPrenom;
         private Label labEmail;
