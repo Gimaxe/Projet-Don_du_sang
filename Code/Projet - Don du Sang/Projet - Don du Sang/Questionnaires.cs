@@ -19,8 +19,6 @@ namespace Projet___Don_du_Sang
 
         private int indexQuestionActuelle = 1;
 
-        private bool? resultatQuestion = true;
-
         public Questionnaires()
         {
             SuppimerReponseDejaEnregistrer();
@@ -81,9 +79,6 @@ namespace Projet___Don_du_Sang
             using DonDuSangRomainMathisContext db = new DonDuSangRomainMathisContext();
             Reponse reponse = new Reponse();
 
-            Question question = db.Questions.SingleOrDefault(o => o.IdQuestion == indexQuestionActuelle);
-
-
             bool? reponseChoisie = false;
             if (radiobtnOui.Checked)
             {
@@ -91,6 +86,7 @@ namespace Projet___Don_du_Sang
                 textboxPreciser.Visible = true;
 
                 reponseChoisie = true;
+                Question question = db.Questions.SingleOrDefault(o => o.IdQuestion == indexQuestionActuelle);
                 if (question.BesoinPrecision == true)
                 {
                     reponse.PrecisionPourMedecin = textboxPreciser.Text;
@@ -99,7 +95,6 @@ namespace Projet___Don_du_Sang
                 {
                     reponse.PrecisionPourMedecin = null;
                 }
-
             }
             else if (radiobtnNon.Checked)
             {
@@ -118,7 +113,6 @@ namespace Projet___Don_du_Sang
                 textboxPreciser.Visible = false;
 
                 reponseChoisie = null;
-
             }
 
             reponse.Reponse1 = reponseChoisie;
@@ -138,28 +132,14 @@ namespace Projet___Don_du_Sang
             }
             else
             {
-                string TexteResultat = "";
-                switch (resultatQuestion)
-                {
-                    case true:
-                        TexteResultat = "Don faisable";
-                        break;
-
-                    case false:
-                        TexteResultat = "Don impossible";
-                        break;
-
-                    case null:
-                        TexteResultat = "Dépend de l’entretien";
-                        break;     
-                }
-
-                MessageBox.Show("Resultat = " + TexteResultat);
+                MessageBox.Show("Questionnaires terminer, Merci !");
                 Accueil accueil = new Accueil();
                 accueil.Show();
                 this.Hide();
 
             }
+
+            
 
         }
 
