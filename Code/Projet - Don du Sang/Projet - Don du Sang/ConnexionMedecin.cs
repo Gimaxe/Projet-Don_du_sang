@@ -21,6 +21,7 @@ namespace Projet___Don_du_Sang
         {
             if (texboxMotDePasse.Text == "1234")
             {
+                this.Hide();
                 ConsutationDonneur consutationDonneur = new ConsutationDonneur();
                 consutationDonneur.Show();
             }

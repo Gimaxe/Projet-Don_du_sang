@@ -22,6 +22,7 @@ namespace Projet___Don_du_Sang
         {
             try
             {
+                this.Hide();
                 using DonDuSangRomainMathisContext db = new DonDuSangRomainMathisContext();
                 Donneur donneur = db.Donneurs.Where(o => o.AdresseMail == texboxEmail.Text && o.MotDePasse == HashPassword.Hash(texboxMotDePasse.Text)).SingleOrDefault();
                 if (donneur != null)

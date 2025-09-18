@@ -19,6 +19,7 @@ namespace Projet___Don_du_Sang
 
         private void btnInscription_Click(object sender, EventArgs e)
         {
+            this.Hide();
             Inscription inscription = new Inscription();
             inscription.Show();
 
@@ -26,12 +27,14 @@ namespace Projet___Don_du_Sang
 
         private void btnConnexion_Click(object sender, EventArgs e)
         {
+            this.Hide();
             Connexion connexion = new Connexion();
             connexion.Show();
         }
 
         private void btnRetour_Click(object sender, EventArgs e)
         {
+            this.Hide();
             Accueil accueil = new Accueil();
             accueil.Show();
         }

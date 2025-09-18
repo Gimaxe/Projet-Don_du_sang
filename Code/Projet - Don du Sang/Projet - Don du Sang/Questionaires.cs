@@ -22,5 +22,10 @@ namespace Projet___Don_du_Sang
             AccueilDonneurs accueilDonneurs = new AccueilDonneurs();
             accueilDonneurs.Show();
         }
+
+        private void btnQuestionSuivante_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
