@@ -34,7 +34,7 @@
             radiobtnNon = new RadioButton();
             radiobtnJeNeSaisPas = new RadioButton();
             groupBox1 = new GroupBox();
-            textBox1 = new TextBox();
+            textboxPreciser = new TextBox();
             labPreciser = new Label();
             btnQuestionPrecedente = new Button();
             btnQuestionSuivante = new Button();
@@ -105,12 +105,12 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "groupBox1";
             // 
-            // textBox1
+            // textboxPreciser
             // 
-            textBox1.Location = new Point(146, 266);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(624, 39);
-            textBox1.TabIndex = 7;
+            textboxPreciser.Location = new Point(146, 266);
+            textboxPreciser.Name = "textboxPreciser";
+            textboxPreciser.Size = new Size(624, 39);
+            textboxPreciser.TabIndex = 7;
             // 
             // labPreciser
             // 
@@ -129,6 +129,7 @@
             btnQuestionPrecedente.TabIndex = 8;
             btnQuestionPrecedente.Text = "Question précedente";
             btnQuestionPrecedente.UseVisualStyleBackColor = true;
+            btnQuestionPrecedente.Visible = false;
             // 
             // btnQuestionSuivante
             // 
@@ -138,6 +139,7 @@
             btnQuestionSuivante.TabIndex = 9;
             btnQuestionSuivante.Text = "Question suivante";
             btnQuestionSuivante.UseVisualStyleBackColor = true;
+            btnQuestionSuivante.Click += btnQuestionSuivante_Click;
             // 
             // BtnRetourMenu
             // 
@@ -157,7 +159,7 @@
             Controls.Add(BtnRetourMenu);
             Controls.Add(btnQuestionSuivante);
             Controls.Add(btnQuestionPrecedente);
-            Controls.Add(textBox1);
+            Controls.Add(textboxPreciser);
             Controls.Add(labPreciser);
             Controls.Add(groupBox1);
             Controls.Add(labQuestionPosee);
@@ -179,7 +181,7 @@
         private RadioButton radiobtnJeNeSaisPas;
         private GroupBox groupBox1;
         private Label labPreciser;
-        private TextBox textBox1;
+        private TextBox textboxPreciser;
         private Button btnQuestionPrecedente;
         private Button btnQuestionSuivante;
         private Button BtnRetourMenu;

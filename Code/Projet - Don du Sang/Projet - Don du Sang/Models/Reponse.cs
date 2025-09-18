@@ -7,7 +7,7 @@ public partial class Reponse
 {
     public int IdReponse { get; set; }
 
-    public bool Reponse1 { get; set; }
+    public bool? Reponse1 { get; set; }
 
     public string? PrecisionPourMedecin { get; set; }
 
