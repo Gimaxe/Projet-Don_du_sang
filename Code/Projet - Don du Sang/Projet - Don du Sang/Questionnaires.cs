@@ -12,14 +12,14 @@ using System.Windows.Forms;
 namespace Projet___Don_du_Sang
 {
 
-    public partial class Questionaires : Form
+    public partial class Questionnaires : Form
     {
         private List<Question> listeQuestions;
 
 
         private int indexQuestionActuelle = 1;
 
-        public Questionaires()
+        public Questionnaires()
         {
             SuppimerReponseDejaEnregistrer();
             using DonDuSangRomainMathisContext db = new DonDuSangRomainMathisContext();
@@ -42,7 +42,7 @@ namespace Projet___Don_du_Sang
             Question question = db.Questions.SingleOrDefault(o => o.IdQuestion == indexQuestionActuelle);
 
 
-            labNumeroQuestion.Text = question.Numero.ToString() + " / 15";
+            labNumeroQuestion.Text = question.Numero.ToString() + " / 9";
             labQuestionPosee.Text = "Question " + question.Numero.ToString() + " - " + question.Enonce.ToString();
             radiobtnOui.Checked = true;
             if (question.BesoinPrecision == true)
@@ -132,7 +132,11 @@ namespace Projet___Don_du_Sang
             }
             else
             {
-                Close();
+                MessageBox.Show("Questionnaires terminer, Merci !");
+                Accueil accueil = new Accueil();
+                accueil.Show();
+                this.Hide();
+
             }
 
 

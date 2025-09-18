@@ -33,7 +33,7 @@ namespace Projet___Don_du_Sang
                 if (donneur != null)
                 {
                     DonneurConnecte = donneur;
-                    Questionaires questionaires = new Questionaires();
+                    Questionnaires questionaires = new Questionnaires();
                     questionaires.Show();
                     this.Hide();
                 }
