@@ -34,32 +34,49 @@ namespace Projet___Don_du_Sang
             TxtPrecision.Clear();
             using DonDuSangRomainMathisContext db = new DonDuSangRomainMathisContext();
 
-            Question question = db.Questions.SingleOrDefault(o => o.IdQuestion == idxQuestionActuelle);
-            LblQuestion.Text = question.ToString();
+           
             
             Donneur donneur = (Donneur)LstDonneur.SelectedItem;
             Reponse reponse = db.Reponses.SingleOrDefault(o => o.IdDonneur == donneur.IdDonneur && o.IdQuestion == idxQuestionActuelle);
             int nombreTotalDeQuestions = db.Questions.Count();
+            
+            if (idxQuestionActuelle < nombreTotalDeQuestions)
+            {
+                if  (reponse != null)
+                {
+                    Question question = db.Questions.SingleOrDefault(o => o.IdQuestion == idxQuestionActuelle);
+                    LblQuestion.Text = question.ToString();
+                    if (reponse.Reponse1 == null)
+                    {
+                        radiobtnOui.Checked = true;
+                    }
+                    else if (reponse.Reponse1 == true)
+                    {
+                        radiobtnJeNeSaisPas.Checked = true;
+                    }
+                    else
+                    {
+                        radiobtnNon.Checked = true;
+                    }
 
-            if (reponse.Reponse1 == null)
-            {
-                radiobtnOui.Checked = true;
-            }
-            else if (reponse.Reponse1 == true)
-            {
-                radiobtnJeNeSaisPas.Checked = true;
+                    if (reponse.PrecisionPourMedecin != null)
+                    {
+                        TxtPrecision.Text = reponse.PrecisionPourMedecin.ToString();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("L'utilisateur n'a pas remplis de formulaire");
+                    idxQuestionActuelle = 1;
+                }
             }
             else
             {
-                radiobtnNon.Checked = true;
+                MessageBox.Show("Fin du questionnaire");
+                idxQuestionActuelle = 1;
             }
-
-            if (reponse.PrecisionPourMedecin != null)
-            {
-                TxtPrecision.Text = reponse.PrecisionPourMedecin.ToString();
-            }
-
-        }
+                
+        }   
 
 
         private void LstDonneur_SelectedIndexChanged(object sender, EventArgs e)
