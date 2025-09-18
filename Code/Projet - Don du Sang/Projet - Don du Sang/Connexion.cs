@@ -26,9 +26,6 @@ namespace Projet___Don_du_Sang
                 Donneur donneur = db.Donneurs.Where(o => o.AdresseMail == texboxEmail.Text && o.MotDePasse == HashPassword.Hash(texboxMotDePasse.Text)).SingleOrDefault();
                 if (donneur != null)
                 {
-                    Close();
-                    Connexion connexion = new Connexion();
-                    connexion.Close();
                     Questionaires questionaires = new Questionaires();
                     questionaires.Show();
                 }

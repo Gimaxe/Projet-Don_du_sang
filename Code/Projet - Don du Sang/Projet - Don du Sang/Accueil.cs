@@ -9,10 +9,8 @@ namespace Projet___Don_du_Sang
 
         private void btnDonneur_Click(object sender, EventArgs e)
         {
-//            this.Hide();
             AccueilDonneurs accueilDonneurs = new AccueilDonneurs();
             accueilDonneurs.Show();
-            
         }
 
         private void btnMedecin_Click(object sender, EventArgs e)

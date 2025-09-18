@@ -19,8 +19,6 @@ namespace Projet___Don_du_Sang
 
         private void btnInscription_Click(object sender, EventArgs e)
         {
-            Accueil accueil = new Accueil();
-            accueil.Close();
             Inscription inscription = new Inscription();
             inscription.Show();
 
@@ -28,8 +26,6 @@ namespace Projet___Don_du_Sang
 
         private void btnConnexion_Click(object sender, EventArgs e)
         {
-            Accueil accueil = new Accueil();
-            accueil.Close();
             Connexion connexion = new Connexion();
             connexion.Show();
         }
@@ -38,8 +34,6 @@ namespace Projet___Don_du_Sang
         {
             Accueil accueil = new Accueil();
             accueil.Show();
-            AccueilDonneurs accueilDonneurs = new AccueilDonneurs();
-            accueil.Close();
         }
     }
 }

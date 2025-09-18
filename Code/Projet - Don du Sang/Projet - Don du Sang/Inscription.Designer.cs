@@ -78,6 +78,7 @@
             // 
             texboxMotDePasse.Location = new Point(231, 310);
             texboxMotDePasse.Name = "texboxMotDePasse";
+            texboxMotDePasse.PasswordChar = '*';
             texboxMotDePasse.Size = new Size(341, 39);
             texboxMotDePasse.TabIndex = 4;
             // 

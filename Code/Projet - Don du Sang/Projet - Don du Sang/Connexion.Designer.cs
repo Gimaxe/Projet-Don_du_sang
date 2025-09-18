@@ -78,13 +78,14 @@
             // 
             texboxEmail.Location = new Point(137, 96);
             texboxEmail.Name = "texboxEmail";
-            texboxEmail.Size = new Size(280, 39);
+            texboxEmail.Size = new Size(361, 39);
             texboxEmail.TabIndex = 4;
             // 
             // texboxMotDePasse
             // 
             texboxMotDePasse.Location = new Point(221, 141);
             texboxMotDePasse.Name = "texboxMotDePasse";
+            texboxMotDePasse.PasswordChar = '*';
             texboxMotDePasse.Size = new Size(277, 39);
             texboxMotDePasse.TabIndex = 5;
             // 
