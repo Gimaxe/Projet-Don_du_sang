@@ -17,7 +17,7 @@ public partial class Donneur
 
     public string MotDePasse { get; set; } = null!;
 
-    public string EstDaccord { get; set; } = null!;
+    public bool? EstDaccord { get; set; }
 
     public virtual ICollection<Reponse> Reponses { get; set; } = new List<Reponse>();
 }

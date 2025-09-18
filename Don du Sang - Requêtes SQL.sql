@@ -47,3 +47,5 @@
 --('8','État de santé pour pouvoir donner du sang','Avez-vous prévu une activité avec efforts physiques (sportive, professionnelle...) juste après votre don ?', '1','1'),
 --('9','État de santé pour pouvoir donner du sang - Au cours de votre vie','Avez-vous déjà consulté un cardiologue ?', '0','0'),
 --('10','État de santé pour pouvoir donner du sang - Au cours de votre vie','Avez-vous déjà été opéré(e) ou hospitalisé(e) ?', '0','0');
+
+Select * From Question

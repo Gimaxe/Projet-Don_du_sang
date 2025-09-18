@@ -34,7 +34,7 @@ namespace Projet___Don_du_Sang
                 donneur.Nom = texboxNom.Text;
                 donneur.Prenom = texboxPrenom.Text;
                 donneur.AdresseMail = texboxEmail.Text;
-                donneur.DateDeNaissance = datetimeAnniversaire.Text;
+                donneur.DateDeNaissance = DateOnly.FromDateTime(datetimeAnniversaire.Value);
                 donneur.MotDePasse = HashPassword.Hash(texboxMotDePasse.Text);
                 db.Donneurs.Add(donneur);
                 db.SaveChanges();
